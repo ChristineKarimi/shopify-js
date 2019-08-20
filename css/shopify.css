@@ -3,3 +3,55 @@
  max-width: 1140px;
  width: 80%;
 }
+
+h1,
+.h1 {
+    font-size: em(40);
+    font-weight: 200;
+    margin: 0 0 em(21, 40);
+}
+
+h2,
+.h2 {
+    font-size: em(36);
+    font-weight: 200;
+    margin: 0 0 em(21, 36);
+}
+
+h3,
+.h3 {
+    font-size: em(26.667);
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 0 0 em(21, 26.667);
+    text-transform: uppercase;
+}
+
+h4,
+.h4 {
+    font-size: em(24);
+    font-weight: 300;
+    margin: 0 0 em(21, 24);
+}
+
+h5,
+.h5 {
+    font-size: em(17.778);
+    font-weight: 400;
+    margin: 0 0 em(21, 17.778);
+}
+
+p,
+ul,
+ol,
+dl,
+table {
+    margin: 0 0 em(21);
+}
+
+.hr-text {
+    display: table;
+    font-weight: 600;
+    margin: $half-space auto $space;
+    position: relative;
+    text-transform: uppercase;
