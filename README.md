@@ -1,6 +1,6 @@
   
 # 
-![Landing Page](https://i.ytimg.com/vi/zb5xK9pzChk/maxresdefault.jpg) 
+![Landing Page](https://www.referralcandy.com/wp-content/uploads/2018/01/shopify-setup-740x416.jpg) 
 
 ## Description
 View live site: 
