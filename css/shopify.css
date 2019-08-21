@@ -1,9 +1,397 @@
-.wrap {
- margin: 0 auto;
- max-width: 1140px;
- width: 80%;
+/*  ================================================
+    $Table of Contents
+    ================================================ */
+/**
+*   $Variables
+*     $Colors
+*   $Partials
+*   $Mixins
+*   $Shared
+*     $Forms
+*     $Animations
+*     $Typography
+*     $Alerts
+*     $Buttons
+*     $Tooltip
+*   $Cart
+*   $Checkout
+*   $Newsletter
+*   $Receipt
+*/
+
+//  ================================================
+//  $Variables
+//  ================================================
+$easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+
+$font-size: 16px;
+$baseline: 1.5;
+$space: ($baseline * ($font-size/$font-size) + 0em);
+$half-space: $space/2;
+$double-space: $space * 2;
+
+//  $Media Queries
+//  ================================================
+@mixin bp($point) {
+    //Based on Pure CSS MQ's
+    $sm: "(min-width: 35.5em)";
+    $md: "(min-width: 48em)";
+    $lg: "(min-width: 64em)";
+    $xl: "(min-width: 80em)";
+
+    @if $point==sm {
+        @media #{$sm} {
+            @content;
+        }
+    }
+
+    @if $point==md {
+        @media #{$md} {
+            @content;
+        }
+    }
+
+    @if $point==lg {
+        @media #{$lg} {
+            @content;
+        }
+    }
 }
 
+//  $Colors
+//  ================================================
+$black: #121212;
+$gray: #f6f5f4;
+$dark-gray: #babab9;
+$purple: #5600ff;
+$yellow: #ffab00;
+$red: #ff0015;
+$blue: #007fff;
+$green: #00cc66;
+
+$brand: #121212;
+$facebook: #3b5998;
+$alert: $red;
+$deals: $purple;
+$signup: $blue;
+$warning: $yellow;
+$text: tint($black, 5%);
+$success: $green;
+
+/*  ================================================
+    $Partials
+    ================================================ */
+%clear {
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+%reset-list {
+    padding: 0;
+    list-style: none;
+}
+
+%l-box {
+    border: 1px solid $dark-gray;
+    box-shadow: 3px 3px shade($dark-gray, 40%);
+    margin-bottom: $space;
+    padding: $space $space $half-space;
+}
+
+/*  ================================================
+    $Mixins
+    ================================================ */
+@function em($px, $context: 16) {
+    @return #{$px/$context}em;
+}
+
+/*  ================================================
+    $Shared
+    ================================================ */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font: 400 #{$font-size}/#{$baseline} "Source Sans Pro",
+    sans-serif;
+}
+
+.pure-g [class*="pure-u"] {
+    font-family: "Source Sans Pro";
+}
+
+body {
+    color: #000;
+    margin: 0;
+    padding: 0;
+    transition: all 0.4s ease;
+}
+
+.wrap {
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 80%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    border-bottom: 1px dotted currentColor;
+    text-decoration: none;
+}
+
+[class*="push-"],
+[class*="pull-"] {
+    position: relative;
+}
+
+.pull-u-1-3 {
+    left: -33.3333%;
+}
+
+.push-u-2-3 {
+    left: 66.6667%;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .pull-u-1-3,
+    .push-u-2-3 {
+        left: auto;
+    }
+}
+
+.is-centered {
+    text-align: center;
+}
+
+.is-hidden {
+    visibility: hidden;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/*  $Forms
+    ================================================ */
+fieldset {
+    border: none;
+    margin-bottom: $half-space;
+    padding: 0;
+}
+
+legend {
+    padding: 0;
+}
+
+input,
+select,
+textarea {
+    border: 2px solid $dark-gray;
+    border-radius: 0;
+    box-sizing: border-box;
+    box-shadow: none;
+    color: tint($black, 32%);
+    display: inline-block;
+    font-family: inherit;
+    margin: 0 0 $half-space;
+    width: 100%;
+    transition: border 0.4s, color 0.6s;
+
+    &:focus {
+        color: $text;
+        outline: none;
+        border-color: $brand !important;
+    }
+
+    @include bp(sm) {
+        .inline-field & {
+            width: auto;
+        }
+    }
+}
+
+select,
+textarea,
+[type="tel"],
+[type="url"],
+[type="number"],
+[type="month"],
+[type="text"],
+[type="email"],
+[type="password"] {
+    height: em(39);
+    padding: 0.4rem 0.5rem;
+}
+
+label {
+    color: $dark-gray;
+    display: block;
+    font-size: 0.74em;
+    font-weight: 600;
+    transition: color 0.6s;
+    text-transform: uppercase;
+
+    &.on {
+        color: $black;
+    }
+}
+
+textarea {
+    height: auto;
+}
+
+.input-radio,
+.input-checkbox {
+    label {
+        color: $text;
+        display: inline-block;
+        max-width: 80%;
+    }
+}
+
+.input-radio input[type="radio"],
+.input-checkbox input[type="checkbox"] {
+    float: left;
+    height: 1.2em;
+    width: 1.2em;
+    margin: 0.25em 1em $half-space 0;
+}
+
+.field-wrap {
+    @extend %clear;
+
+    &.error {
+        label {
+            color: $red;
+        }
+
+        input {
+            border-color: $red;
+        }
+    }
+}
+
+.checkout-step.error {
+    animation: shake 0.2s 2 $easeInOutQuint;
+}
+
+/*  $Animations
+    ================================================ */
+@keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes shrink {
+    to {
+        height: 0;
+    }
+}
+
+@keyframes collapse {
+    from {
+        max-height: 30em;
+    }
+
+    to {
+        max-height: 0;
+        padding: 0;
+    }
+}
+
+@keyframes flyUp {
+    from {
+        transform: translateY(6em);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeToGray {
+    to {
+        background-color: $dark-gray;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    33.33% {
+        transform: translate(1em, -1em);
+    }
+
+    66.66% {
+        transform: translate(-1em, 1em);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.fadeOut {
+    animation: fadeOut 0.3s $easeInOutQuint forwards;
+}
+
+.pulse {
+    animation: pulse 0.3s $easeInOutQuint forwards;
+}
+
+.is-removed {
+    animation: flyUp 0.4s $easeInOutQuint forwards reverse,
+        fadeOut 0.3s ease forwards;
+}
+
+.is-added {
+    animation: flyUp 0.4s $easeInOutQuint forwards,
+        fadeOut 0.3s ease forwards reverse;
+}
+
+/*  $Typography
+    ================================================ */
 h1,
 .h1 {
     font-size: em(40);
@@ -55,5 +443,204 @@ table {
     margin: $half-space auto $space;
     position: relative;
     text-transform: uppercase;
+
+    &:before,
+    &:after {
+        content: "\25C8";
+    }
+
+    &:before {
+        margin-right: $half-space;
+    }
+
+    &:after {
+        margin-left: $half-space;
+    }
 }
 
+/*  $Alerts
+    ================================================ */
+.alert {
+    @extend %l-box;
+    margin: $space;
+    padding: $half-space;
+    text-align: center;
+}
+
+.alert-default {
+    background-color: $gray;
+    border-color: $dark-gray;
+}
+
+.alert-warning {
+    background-color: tint($warning, 60%);
+    border-color: $warning;
+}
+
+.decay-progress {
+    background-color: $dark-gray;
+    border-radius: 100%;
+    height: 1em;
+    width: 1em;
+    overflow: hidden;
+    position: absolute;
+    top: 0.3em;
+    right: 0.3em;
+
+    &:after {
+        animation: fadeOut 0.4s ease-in forwards reverse,
+            shrink 7s 0.4s linear forwards;
+        background-color: $success;
+        content: " ";
+        height: 1em;
+        width: 1em;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+/*  $Buttons
+    ================================================ */
+.btn {
+    -webkit-appearance: none;
+    background-image: linear-gradient(rgba(white, 0.24), transparent);
+    cursor: pointer;
+    border: 1px solid;
+    display: inline-block;
+    font: 300 0.74em/1.6 "Source Sans Pro", sans-serif;
+    letter-spacing: 1px;
+    margin: 0 0 $space;
+    padding: 0.8em $space 0.7em;
+    position: relative;
+
+    text: {
+        align: center;
+        decoration: none;
+        transform: uppercase;
+        shadow: 1px 1px 0 rgba($black, 0.4);
+    }
+
+    transition: all 0.4s ease;
+    vertical-align: top;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+        box-shadow: 3px 3px 0 rgba(black, 0.4);
+        outline: none;
+    }
+
+    &:active {
+        box-shadow: 3px 3px 0 rgba(black, 0.8);
+    }
+
+    @include bp(sm) {
+        width: auto;
+    }
+}
+
+.btn-primary {
+    background-color: $brand;
+    border: 1px solid $black;
+    color: #fff;
+
+    &:active {
+        background-color: shade($brand, 72%);
+    }
+}
+
+.btn-secondary {
+    background-color: $dark-gray;
+    border-color: shade($dark-gray, 8%);
+    color: #fff;
+
+    &:active {
+        background-color: shade($dark-gray, 32%);
+        border-color: shade($dark-gray, 32%);
+    }
+}
+
+.btn-deals {
+    background-color: $deals;
+    border-color: $deals;
+    color: #fff;
+
+    &:active {
+        background-color: shade($deals, 32%);
+        border-color: shade($deals, 32%);
+    }
+}
+
+.btn-facebook {
+    background-color: $facebook;
+    border-color: $facebook;
+    color: #fff;
+}
+
+.btn-tertiary {
+    background-color: $blue;
+    border-color: $blue;
+    color: #fff;
+}
+
+.btn-alert {
+    background-color: $alert;
+    border-color: $alert;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: $success;
+    border-color: $success;
+    color: #fff;
+}
+
+/*  $Tooltip
+    ================================================ */
+.tooltip-trigger {
+    color: $black;
+    cursor: pointer;
+    font-size: initial;
+    position: relative;
+    padding: 0 $half-space;
+    vertical-align: super;
+
+    &:hover .tooltip {
+        opacity: 1;
+        transform: translateY(-110%);
+        visibility: visible;
+    }
+}
+
+.tooltip {
+    background-color: $black;
+    border-radius: 3px;
+    color: #fff;
+    cursor: default;
+    display: block;
+    font-weight: 400;
+    margin-left: -9em;
+    padding: $space;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.3s linear, transform 0.3s $easeInOutQuint;
+    visibility: hidden;
+    width: 18em;
+    z-index: 2;
+
+    &:after {
+        border: 10px solid transparent;
+        border-top-color: $black;
+        content: " ";
+        margin-left: -10px;
+        top: 98%;
+        position: absolute;
+        left: 50%;
+        z-index: 1;
+    }
+}
