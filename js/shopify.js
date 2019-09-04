@@ -12,42 +12,4 @@ $(function () {
                 return subTotal.toFixed(2);
             };
 
-            $cartItems.each(function (index) {
-                        var $cartItem = $(this),
-                            $itemInput = $cartItem.find("input"),
-                            $subTotal = $cartItem.find(".cart-item-subtotal");
-
-                        itemPrice = $cartItem
-                            .find(".cart-item-price")
-                            .text()
-                            .match(getPrice);
-                        itemQty = $itemInput.val();
-
-                        $subTotal.append("$" + getSubTotal());
-
-                        $itemInput.on("input", function () {
-                                    itemPrice = $cartItem
-                                        .find(".cart-item-price")
-                                        .text()
-                                        .match(getPrice);
-                                    itemQty = $cartItem.find("input").val();
-
-                                    if (itemQty <= 0) {
-                                        $removedItem = $cartItem;
-
-                                        $removedItem.addClass("is-removed").on(animationEnd, function () {
-                                            $removedItem.removeClass("is-removed").addClass("is-hidden");
-                                        });
-
-                                        $('[data-mod="undo-alert"]')
-                                            .parent("li")
-                                            .remove();
-                                        $removedItem.before(removedItemAlert);
-                                        $('[data-mod="undo-alert"]').startDecay();
-                                        $('[data-mod="undo-alert"]')
-                                            .parent("li")
-                                            .delay(7000)
-                                            .fadeOut();
-
-                                        removedItems += 1;
-                                    }
+            
