@@ -35,5 +35,27 @@ $(function () {
                 .match(getPrice);
             itemQty = $cartItem.find("input").val();
 
+// Conditional statement to check for items added/removed from the cart
+            if (itemQty <= 0) {
+                $removedItem = $cartItem;
+
+                $removedItem.addClass("is-removed").on(animationEnd, function () {
+                    $removedItem.removeClass("is-removed").addClass("is-hidden");
+                });
+
+                $('[data-mod="undo-alert"]')
+                    .parent("li")
+                    .remove();
+                $removedItem.before(removedItemAlert);
+                $('[data-mod="undo-alert"]').startDecay();
+                $('[data-mod="undo-alert"]')
+                    .parent("li")
+                    .delay(7000)
+                    .fadeOut();
+
+                removedItems += 1;
+            }
+
+
 
     
