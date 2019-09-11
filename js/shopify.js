@@ -12,3 +12,28 @@ $(function () {
         var subTotal = itemPrice * itemQty;
         return subTotal.toFixed(2);
     };
+
+// shows total of items added in the cart
+    $cartItems.each(function (index) {
+        var $cartItem = $(this),
+            $itemInput = $cartItem.find("input"),
+            $subTotal = $cartItem.find(".cart-item-subtotal");
+
+        itemPrice = $cartItem
+            .find(".cart-item-price")
+            .text()
+            .match(getPrice);
+        itemQty = $itemInput.val();
+
+// Get total price
+        $subTotal.append("$" + getSubTotal());
+
+        $itemInput.on("input", function () {
+            itemPrice = $cartItem
+                .find(".cart-item-price")
+                .text()
+                .match(getPrice);
+            itemQty = $cartItem.find("input").val();
+
+
+    
