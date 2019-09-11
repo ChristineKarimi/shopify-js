@@ -72,6 +72,15 @@ $(function () {
         });
     });
 
+    $(".cart-controls")
+        .find(".btn-primary")
+        .on("click", function () {
+            $(".cart").addClass("is-hidden");
+            $("#login")
+                .addClass("is-added")
+                .removeClass("is-hidden");
+        });
+
 
 
     
