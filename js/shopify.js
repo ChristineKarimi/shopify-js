@@ -91,6 +91,20 @@ $(function () {
                 .removeClass("is-hidden");
         });
 
+// form variable
+    var validateForms = function () {
+        var isValid = true,
+            $formParent = $(this).closest("section");
+            
+        $formParent.find("input").each(function () {
+            if (!$(this).val()) {
+                isValid = false;
+                $(this)
+                    .closest(".field-wrap")
+                    .addClass("error");
+            }
+        });
+
 
 
 
