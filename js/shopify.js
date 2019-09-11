@@ -56,6 +56,8 @@ $(function () {
                 removedItems += 1;
             }
 
+            var cartItemsLength = $cartItems.length;
+
 
 
     
