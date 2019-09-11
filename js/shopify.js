@@ -56,7 +56,21 @@ $(function () {
                 removedItems += 1;
             }
 
-            var cartItemsLength = $cartItems.length;
+            var cartItemsLength = $cartItems.length;  //Stores all items added into the cart
+
+
+            if (cartItemsLength === removedItems) {
+                $(".cart-items-body").append(emptyCartAlert);   //checks whether cart is empty and the adds the appends the result
+            } else {
+            }
+
+            $subTotal.text("$" + getSubTotal());
+
+            $subTotal.addClass("pulse").on(animationEnd, function () {
+                $subTotal.removeClass("pulse");
+            });
+        });
+    });
 
 
 
