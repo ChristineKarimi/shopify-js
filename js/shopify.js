@@ -80,6 +80,17 @@ $(function () {
                 .addClass("is-added")
                 .removeClass("is-hidden");
         });
+// login form button that enables checkout
+    $("#login")
+        .find(".btn")
+        .on("click", function (e) {
+            e.preventDefault();
+            $("#login").addClass("is-hidden");
+            $("#checkout")
+                .addClass("is-added")
+                .removeClass("is-hidden");
+        });
+
 
 
 
