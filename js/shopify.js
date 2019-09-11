@@ -105,6 +105,37 @@ $(function () {
             }
         });
 
+// conditional statement to check for validation
+        if (isValid) {
+            $(".progress-step.is-active")
+                .next(".progress-step")
+                .addClass("is-active");
+
+            if ($formParent.hasClass("payment-info")) {
+                $("#checkout").addClass("is-hidden");
+                $("#checkout-receipt")
+                    .addClass("is-added")
+                    .on(animationEnd, function () {
+                        $(this).removeClass("is-added");
+                    })
+                    .removeClass("is-hidden");
+            } else {
+                $formParent.addClass("is-hidden");
+                $formParent
+                    .next("section")
+                    .removeClass("is-hidden")
+                    .addClass("is-added")
+                    .on(animationEnd, function () {
+                        $(this).removeClass("is-added");
+                    });
+            }
+            return false;
+        } else {
+            $formParent.addClass("error");
+            return false;
+        }
+    };  //132
+
 
 
 
