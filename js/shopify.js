@@ -1,4 +1,3 @@
-// alert messages for user actions
 $(function () {
     var $cartItems = $(".cart-item"),
         getPrice = /(\d+)\.(\d{2})/g,
@@ -13,7 +12,6 @@ $(function () {
         return subTotal.toFixed(2);
     };
 
-// shows total of items added in the cart
     $cartItems.each(function (index) {
         var $cartItem = $(this),
             $itemInput = $cartItem.find("input"),
@@ -25,7 +23,6 @@ $(function () {
             .match(getPrice);
         itemQty = $itemInput.val();
 
-// Get total price
         $subTotal.append("$" + getSubTotal());
 
         $itemInput.on("input", function () {
@@ -35,7 +32,6 @@ $(function () {
                 .match(getPrice);
             itemQty = $cartItem.find("input").val();
 
-// Conditional statement to check for items added/removed from the cart
             if (itemQty <= 0) {
                 $removedItem = $cartItem;
 
@@ -56,11 +52,10 @@ $(function () {
                 removedItems += 1;
             }
 
-            var cartItemsLength = $cartItems.length;  //Stores all items added into the cart
-
+            var cartItemsLength = $cartItems.length;
 
             if (cartItemsLength === removedItems) {
-                $(".cart-items-body").append(emptyCartAlert);   //checks whether cart is empty and the adds the appends the result
+                $(".cart-items-body").append(emptyCartAlert);
             } else {
             }
 
@@ -80,7 +75,7 @@ $(function () {
                 .addClass("is-added")
                 .removeClass("is-hidden");
         });
-// login form button that enables checkout
+
     $("#login")
         .find(".btn")
         .on("click", function (e) {
@@ -91,11 +86,10 @@ $(function () {
                 .removeClass("is-hidden");
         });
 
-// form variable
     var validateForms = function () {
         var isValid = true,
             $formParent = $(this).closest("section");
-            
+
         $formParent.find("input").each(function () {
             if (!$(this).val()) {
                 isValid = false;
@@ -105,7 +99,6 @@ $(function () {
             }
         });
 
-// conditional statement to check for validation
         if (isValid) {
             $(".progress-step.is-active")
                 .next(".progress-step")
@@ -134,8 +127,7 @@ $(function () {
             $formParent.addClass("error");
             return false;
         }
-    };  
-
+    };
 
     $("#step1, #step2, #step3")
         .find(".btn-primary")
@@ -174,7 +166,6 @@ $(function () {
         $(".nl-signup").startDecay();
     });
 
-
     $("#nl-noThanks").on("click", function (e) {
         e.preventDefault();
         $nlSignupBody
@@ -197,9 +188,3 @@ $.fn.startDecay = function () {
 
     return false;
 };
-
-
-
-
-
-    
