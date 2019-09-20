@@ -1,26 +1,4 @@
-/*  ================================================
-    $Table of Contents
-    ================================================ */
-/**
-*   $Variables
-*     $Colors
-*   $Partials
-*   $Mixins
-*   $Shared
-*     $Forms
-*     $Animations
-*     $Typography
-*     $Alerts
-*     $Buttons
-*     $Tooltip
-*   $Cart
-*   $Checkout
-*   $Newsletter
-*   $Receipt
-*/
-/*  ================================================
-    $Partials
-    ================================================ */
+
 .field-wrap {
     *zoom: 1;
 }
@@ -508,7 +486,7 @@ table {
 }
 
 .alert-warning {
-    background-color: tint(#ffab00, 60%);
+    background-color: palevioletred, 60%);
     border-color: #ffab00;
 }
 
@@ -526,7 +504,7 @@ table {
 .decay-progress:after {
     -webkit-animation: fadeOut 0.4s ease-in forwards reverse, shrink 7s 0.4s linear forwards;
     animation: fadeOut 0.4s ease-in forwards reverse, shrink 7s 0.4s linear forwards;
-    background-color: #00cc66;
+    background-color: palevioletred;
     content: " ";
     height: 1em;
     width: 1em;
@@ -575,18 +553,18 @@ table {
 }
 
 .btn-primary {
-    background-color: #121212;
-    border: 1px solid #121212;
+    background-color: palevioletred;
+    border: 1px solid palevioletred;
     color: #fff;
 }
 
 .btn-primary:active {
-    background-color: shade(#121212, 72%);
+    background-color: palevioletred, 72%);
 }
 
 .btn-secondary {
-    background-color: #babab9;
-    border-color: shade(#babab9, 8%);
+    background-color: palevioletred;
+    border-color: palevioletred, 8%);
     color: #fff;
 }
 
@@ -596,25 +574,25 @@ table {
 }
 
 .btn-deals {
-    background-color: #5600ff;
-    border-color: #5600ff;
+    background-color: palevioletred;
+    border-color: palevioletred;
     color: #fff;
 }
 
 .btn-deals:active {
-    background-color: shade(#5600ff, 32%);
+    background-color: palevioletred, 32%);
     border-color: shade(#5600ff, 32%);
 }
 
 .btn-facebook {
-    background-color: #3b5998;
-    border-color: #3b5998;
+    background-color: palevioletred;
+    border-color: palevioletred;
     color: #fff;
 }
 
 .btn-tertiary {
-    background-color: #007fff;
-    border-color: #007fff;
+    background-color: palevioletred;
+    border-color: palevioletred;
     color: #fff;
 }
 
@@ -625,7 +603,7 @@ table {
 }
 
 .btn-success {
-    background-color: #00cc66;
+    background-color: palevioletred;
     border-color: #00cc66;
     color: #fff;
 }
@@ -649,7 +627,7 @@ table {
 }
 
 .tooltip {
-    background-color: #121212;
+    background-color: palevioletred;
     border-radius: 3px;
     color: #fff;
     cursor: default;
@@ -800,7 +778,7 @@ table {
 }
 
 .progress-step:after {
-    background-color: #babab9;
+    background-color: palevioletred;
     width: 100%;
 }
 
@@ -813,16 +791,16 @@ table {
 }
 
 .progress-step.is-active {
-    color: #007fff;
+    color: palevioletred;
 }
 
 .progress-step.is-active a {
-    color: #007fff;
+    color: palevioletred;
     cursor: pointer;
 }
 
 .progress-step.is-active:before {
-    background-color: #007fff;
+    background-color: palevioletred;
     width: 100%;
 }
 
@@ -903,7 +881,7 @@ table {
 }
 
 .receipt-rp:hover .receipt-rp-header {
-    background-color: rgba(18, 18, 18, 0.8);
+    background-color: palevioletred;
 }
 
 .receipt-rp img {
@@ -932,7 +910,7 @@ table {
     $Warning
     ================================================ */
 .warning {
-    background-color: #fffc00;
+    background-color: palevioletred;
     margin-bottom: 1rem;
     padding: 2rem;
 }
