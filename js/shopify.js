@@ -175,6 +175,31 @@ $(function () {
     });
 
 
+    $("#nl-noThanks").on("click", function (e) {
+        e.preventDefault();
+        $nlSignupBody
+            .empty()
+            .append(
+                '<div class="is-added">Too bad, please check us out in the future!</div>'
+            );
+        $(".nl-signup").startDecay();
+    });
+});
+
+$.fn.startDecay = function () {
+    parentContainer = this;
+
+    parentContainer
+        .css("position", "relative")
+        .append('<div class="decay-progress"></div>')
+        .delay(7000)
+        .fadeOut(500);
+
+    return false;
+};
+
+
+
 
 
     
