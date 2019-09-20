@@ -408,6 +408,8 @@ textarea {
     ================================================ */
 h1,
 .h1 {
+    text-align: center;
+    color: palevioletred;
     font-size: 2.5em;
     font-weight: 200;
     margin: 0 0 0.525em;
@@ -442,13 +444,17 @@ h5,
     font-weight: 400;
     margin: 0 0 1.1812352346em;
 }
+h5 {
+        color: palevioletred;
 
+}
 p,
 ul,
 ol,
 dl,
 table {
     margin: 0 0 1.3125em;
+    color: palevioletred;
 }
 
 .hr-text {
@@ -910,7 +916,7 @@ table {
     $Warning
     ================================================ */
 .warning {
-    background-color: palevioletred;
+    background-image: url("images/shopify.png");
     margin-bottom: 1rem;
     padding: 2rem;
 }
