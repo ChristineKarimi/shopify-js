@@ -134,7 +134,45 @@ $(function () {
             $formParent.addClass("error");
             return false;
         }
-    };  //132
+    };  
+
+
+    $("#step1, #step2, #step3")
+        .find(".btn-primary")
+        .on("click", validateForms);
+
+    $("#step2, #step3")
+        .find(".btn-secondary")
+        .on("click", function (e) {
+            e.preventDefault();
+
+            $formParent = $(this).closest("section");
+
+            $formParent.removeClass("is-added").addClass("is-hidden");
+            $formParent
+                .prev("section")
+                .addClass("is-added")
+                .on(animationEnd, function () {
+                    $(this).removeClass("is-added");
+                })
+                .removeClass("is-hidden");
+
+            $(".progress-step.is-active")
+                .last(".is-active")
+                .removeClass("is-active");
+        });
+
+    var $nlSignupBody = $(".nl-signup-body");
+
+    $("#nl-signup").on("click", function (e) {
+        e.preventDefault();
+        $nlSignupBody
+            .empty()
+            .append(
+                '<div class="is-added">Good choice! Be sure to lookout for our next newsletter on {{ date }}. You won\'t regret it.</div>'
+            );
+        $(".nl-signup").startDecay();
+    });
 
 
 
