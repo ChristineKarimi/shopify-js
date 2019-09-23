@@ -1,3 +1,15 @@
+a {
+    color: inherit;
+    border-bottom: 1px dotted currentColor;
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 .field-wrap {
     *zoom: 1;
@@ -32,12 +44,7 @@
     padding: 1.5em 1.5em 0.75em;
 }
 
-/*  ================================================
-    $Mixins
-    ================================================ */
-/*  ================================================
-    $Shared
-    ================================================ */
+
 *,
 *:before,
 *:after {
@@ -65,16 +72,8 @@ body {
     width: 80%;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
 
-a {
-    color: inherit;
-    border-bottom: 1px dotted currentColor;
-    text-decoration: none;
-}
+
 
 [class*="push-"],
 [class*="pull-"] {
