@@ -1,5 +1,7 @@
+// Function that calculates the total of all items
+
 $(function () {
-    var $cartItems = $(".cart-item"),
+    var $cartItems = $(".cart-item"),           //Getting the price of a single item.
         getPrice = /(\d+)\.(\d{2})/g,
         animationEnd = "webkitAnimationEnd oanimationend oAnimationEnd animationend",
         removedItemAlert =
@@ -8,7 +10,7 @@ $(function () {
             '<li class="is-added"><div class="alert alert-default"><h3 class="alert-header">Bummer, your cart\'s empty.</h3><div class="alert-body"><p>You currently don\'t have any items in your cart. Need some help? Check out our: </p><a href="" class="btn btn-primary">Products</a><span class=""> or </span><a href="" class="btn btn-deals">Specials</a></div></div></li>',
         removedItems = 0;
     getSubTotal = function () {
-        var subTotal = itemPrice * itemQty;
+        var subTotal = itemPrice * itemQty;      //  Multiplies the price of a single item to the number of items selected
         return subTotal.toFixed(2);
     };
 
@@ -16,6 +18,9 @@ $(function () {
         var $cartItem = $(this),
             $itemInput = $cartItem.find("input"),
             $subTotal = $cartItem.find(".cart-item-subtotal");
+            
+
+// Getting price of a single item        
 
         itemPrice = $cartItem
             .find(".cart-item-price")
@@ -52,6 +57,8 @@ $(function () {
                 removedItems += 1;
             }
 
+// Removing items from a cart function
+
             var cartItemsLength = $cartItems.length;
 
             if (cartItemsLength === removedItems) {
@@ -75,6 +82,9 @@ $(function () {
                 .addClass("is-added")
                 .removeClass("is-hidden");
         });
+    
+// Login function after checking out
+
 
     $("#login")
         .find(".btn")

@@ -10,6 +10,49 @@ img {
     height: auto;
 }
 
+h1,
+.h1 {
+    text-align: center;
+    color: palevioletred;
+    font-size: 2.5em;
+    font-weight: 200;
+    margin: 0 0 0.525em;
+}
+
+h2,
+.h2 {
+    font-size: 2.25em;
+    font-weight: 200;
+    margin: 0 0 0.5833333333em;
+}
+
+h3,
+.h3 {
+    font-size: 1.6666875em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 0 0 0.7874901564em;
+    text-transform: uppercase;
+}
+
+h4,
+.h4 {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 0 0 0.875em;
+}
+
+h5,
+.h5 {
+    font-size: 1.111125em;
+    font-weight: 400;
+    margin: 0 0 1.1812352346em;
+}
+
+h5 {
+    color: palevioletred;
+
+}
 
 .field-wrap {
     *zoom: 1;
@@ -405,48 +448,7 @@ textarea {
 
 /*  $Typography
     ================================================ */
-h1,
-.h1 {
-    text-align: center;
-    color: palevioletred;
-    font-size: 2.5em;
-    font-weight: 200;
-    margin: 0 0 0.525em;
-}
 
-h2,
-.h2 {
-    font-size: 2.25em;
-    font-weight: 200;
-    margin: 0 0 0.5833333333em;
-}
-
-h3,
-.h3 {
-    font-size: 1.6666875em;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin: 0 0 0.7874901564em;
-    text-transform: uppercase;
-}
-
-h4,
-.h4 {
-    font-size: 1.5em;
-    font-weight: 300;
-    margin: 0 0 0.875em;
-}
-
-h5,
-.h5 {
-    font-size: 1.111125em;
-    font-weight: 400;
-    margin: 0 0 1.1812352346em;
-}
-h5 {
-        color: palevioletred;
-
-}
 p,
 ul,
 ol,
