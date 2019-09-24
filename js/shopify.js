@@ -40,7 +40,7 @@ $(function () {
             if (itemQty <= 0) {
                 $removedItem = $cartItem;
 
-                $removedItem.addClass("is-removed").on(animationEnd, function () {
+                $removedItem.addClass("is-removed").on(animationEnd, function () {     //----User removes items from a cart
                     $removedItem.removeClass("is-removed").addClass("is-hidden");
                 });
 
@@ -96,6 +96,8 @@ $(function () {
                 .removeClass("is-hidden");
         });
 
+// Form validation function
+
     var validateForms = function () {
         var isValid = true,
             $formParent = $(this).closest("section");
@@ -139,6 +141,8 @@ $(function () {
         }
     };
 
+//End of form validation function
+
     $("#step1, #step2, #step3")
         .find(".btn-primary")
         .on("click", validateForms);
@@ -164,7 +168,7 @@ $(function () {
                 .removeClass("is-active");
         });
 
-    var $nlSignupBody = $(".nl-signup-body");
+    var $nlSignupBody = $(".nl-signup-body");        //Sign up form for checkout purposes
 
     $("#nl-signup").on("click", function (e) {
         e.preventDefault();
@@ -176,6 +180,7 @@ $(function () {
         $(".nl-signup").startDecay();
     });
 
+// Final stage after checking out
     $("#nl-noThanks").on("click", function (e) {
         e.preventDefault();
         $nlSignupBody
