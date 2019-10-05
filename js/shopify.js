@@ -1,5 +1,5 @@
 // Function that calculates the total of all items
-
+// -------------------------------------------------
 $(function () {
     var $cartItems = $(".cart-item"),           //Getting the price of a single item.
         getPrice = /(\d+)\.(\d{2})/g,
@@ -21,7 +21,7 @@ $(function () {
             
 
 // Getting price of a single item        
-
+// --------------------------------
         itemPrice = $cartItem
             .find(".cart-item-price")
             .text()
@@ -58,7 +58,7 @@ $(function () {
             }
 
 // Removing items from a cart function
-
+// -------------------------------------
             var cartItemsLength = $cartItems.length;
 
             if (cartItemsLength === removedItems) {
@@ -84,8 +84,7 @@ $(function () {
         });
     
 // Login function after checking out
-
-
+// ------------------------------------
     $("#login")
         .find(".btn")
         .on("click", function (e) {
@@ -97,7 +96,7 @@ $(function () {
         });
 
 // Form validation function
-
+// --------------------------
     var validateForms = function () {
         var isValid = true,
             $formParent = $(this).closest("section");
@@ -142,7 +141,7 @@ $(function () {
     };
 
 //End of form validation function
-
+// --------------------------------
     $("#step1, #step2, #step3")
         .find(".btn-primary")
         .on("click", validateForms);
@@ -181,6 +180,7 @@ $(function () {
     });
 
 // Final stage after checking out
+// --------------------------------
     $("#nl-noThanks").on("click", function (e) {
         e.preventDefault();
         $nlSignupBody
