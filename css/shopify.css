@@ -115,9 +115,6 @@ body {
     width: 80%;
 }
 
-
-
-
 [class*="push-"],
 [class*="pull-"] {
     position: relative;
@@ -151,7 +148,7 @@ body {
     margin: 0 !important;
 }
 
-/*  $Forms
+/*  Forms
     ================================================ */
 fieldset {
     border: none;
@@ -253,7 +250,7 @@ textarea {
     animation: shake 0.2s 2 cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-/*  $Animations
+/*  Animations
     ================================================ */
 @-webkit-keyframes pulse {
     0% {
@@ -446,7 +443,7 @@ textarea {
     animation: flyUp 0.4s cubic-bezier(0.86, 0, 0.07, 1) forwards, fadeOut 0.3s ease forwards reverse;
 }
 
-/*  $Typography
+/*  Tables
     ================================================ */
 
 p,
@@ -479,7 +476,7 @@ table {
     margin-left: 0.75em;
 }
 
-/*  $Alerts
+/*  Alerts
     ================================================ */
 .alert {
     margin: 1.5em;
@@ -521,7 +518,7 @@ table {
     bottom: 0;
 }
 
-/*  $Buttons
+/*  Buttons
     ================================================ */
 .btn {
     -webkit-appearance: none;
@@ -615,7 +612,7 @@ table {
     color: #fff;
 }
 
-/*  $Tooltip
+/*  Tooltip
     ================================================ */
 .tooltip-trigger {
     color: #121212;
@@ -667,7 +664,7 @@ table {
 }
 
 /*  ================================================
-    $Cart
+    Cart
     ================================================ */
 .cart-items-header dd,
 .cart-item dd {
@@ -741,7 +738,7 @@ table {
 }
 
 /*  ================================================
-    $Login
+    Login
     ================================================ */
 .login,
 .login-alt {
@@ -847,21 +844,17 @@ table {
     padding: 0.75em 0;
 }
 
-/*  $Payment
+/*  Payment
     ================================================ */
 .cc-code {
     float: left;
     width: 70%;
 }
 
-/*  $Newsletter
-    ================================================ */
-.checkout-footer {
-    text-align: center;
-}
+
 
 /*  ================================================
-    $Receipt
+    Receipt
     ================================================ */
 .shipped-info ul,
 .paid-info ul {
@@ -916,7 +909,7 @@ table {
 }
 
 /*  ================================================
-    $Warning
+    Warning
     ================================================ */
 .warning {
     background-image: url("images/shopify.png");
