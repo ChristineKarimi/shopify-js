@@ -72,6 +72,7 @@ h5 {
 .checkout-items-body {
     padding: 0;
     list-style: none;
+    width: 60%;
 }
 
 .alert,
@@ -810,6 +811,7 @@ table {
 
 [class*="checkout-step"] {
     margin-bottom: 3em;
+    margin-right: -35%;
     margin-left: 33%;
     
 }
