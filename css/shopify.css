@@ -13,7 +13,7 @@ img {
 h1,
 .h1 {
     text-align: center;
-    color: palevioletred;
+    color: black;
     font-size: 2.5em;
     font-weight: 200;
     margin: 0 0 0.525em;
@@ -452,7 +452,7 @@ ol,
 dl,
 table {
     margin: 0 0 1.3125em;
-    color: palevioletred;
+    color: black;
 }
 
 .hr-text {
@@ -799,7 +799,7 @@ table {
 }
 
 .progress-step.is-active a {
-    color: palevioletred;
+    color: black;
     cursor: pointer;
 }
 
@@ -816,8 +816,8 @@ table {
 
 @media (min-width: 48em) {
     .checkout-items {
-        margin-left: 3em;
-    }
+    margin-left: -47em;
+    
 }
 
 .checkout-item dd {
