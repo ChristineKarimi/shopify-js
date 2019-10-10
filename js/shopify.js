@@ -204,7 +204,10 @@ $.fn.startDecay = function () {
     return false;
 };
 
-$('.btn btn-facebook').on('click', function () {
+// Facebook login functionality
+// -----------------------------
+
+$('#facebook-button').on('click', function () {
     // Initialize with your OAuth.io app public key
     OAuth.initialize('HwAr2OtSxRgEEnO2-JnYjsuA3tc');
     // Use popup for oauth
@@ -224,4 +227,3 @@ $('.btn btn-facebook').on('click', function () {
         })
     });
 })
-E
